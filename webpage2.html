@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>webpage2</title>
+</head>
+<body>
+    <script>
+        var h = document.createElement('header');
+        //now add class attributes to header
+        h.setAttribute('class','a_header');
+        h.innerHTML = 'HEADER';//esko inner html ko bnaya append krne se phle 
+        //ab jo m var h uska inner html likhenge APPEND KRNE KE BAD ME
+         var f =  document.createElement('footer');
+        var m = document.createElement('div');
+
+        console.log(h);
+        console.log(m);
+        console.log(f);
+        document.body.appendChild(h);
+        document.body.appendChild(m);
+        var m = document.createElement('div');
+       // now here im going to add class attr in div
+       document.querySelector('header.a_header ~ div').setAttribute('class','a_m');
+       
+       var x = document.getElementsByClassName('a_m');
+       console.log(x);
+         x[0].style.color = ' red';
+       //it will return a collection []array
+        document.body.appendChild(f);
+        //ab div ko innerhtml denge
+        document.querySelector('div').innerHTML = "MAIN AREA";
+        
+        var foo = document.querySelector('div ~ footer');
+
+        foo.innerHTML = 'Footer';
+        //button append krne ke liy element bnana bhi pdega
+        
+        //creat the btn
+        var b = document.createElement('button');
+         b.innerHTML = 'click me';
+        console.log(b);
+        foo.appendChild(b);
+       //document.querySelector('div ~  footer').innerHTML = 'FOOTER';
+      var btn = document.getElementsByTagName('button');
+      console.log(btn); 
+           
+      btn[0].addEventListener('click',function(){
+                                     alert('you clicked me!');
+                                     h.style.color='orange';
+      },);
+      //elementname.addeventlistner(event, function, usecapture)
+      
+  
+
+
+
+    </script>
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>text shadow</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        .myspan{
+            font-size: 6em;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 900;
+            color: #fff;
+            padding-left: 200px;
+            display: block;
+            padding-top: 100px;
+            margin-top: 200px;
+            clear: both;
+            
+        }
+        .myspan > span:first-child{
+            color: #FD2155;
+            /*text shadow : 
+            horigentalshadow verticalshadow blur-radius color
+            h v b c
+            
+            */
+            text-shadow: -19px 0px 0px rgb(167, 238, 217);
+        }
+       .myspan span{
+            /*state1st*/
+         float: left/*pass pass aaenge latters*/
+       } /**ye neeche kam nhi kr rha h*/
+
+        .myspan > span:not(.myspan > span:first-child):hover{
+             /*state 2nd state wo h jisme hover lgate h*/
+               color: rgb(167, 238, 217);
+               transform: scale(0.5,0.5);
+            /*   animation-play-state: running;  */
+        };  
+     .myspan span{
+        transition: all 0.8 linear;
+        transform: scale(1,1);
+        
+     }
+     .myimg{
+        position: fixed;
+        top: 50px;
+        left: 0px;
+        width: 250px;
+        height: 300px;
+
+     }
+     .myform table{
+          width: 100%;
+
+     }
+     .myform input:not(.myform input[type="submit"]),.myform textarea{
+                background-color: rgb(32, 204, 132);
+                border: none;
+                height: 50px;
+     }
+     input ::placeholder{
+        color: #fff;
+     }
+     input{
+        color: white;
+     }
+     .err{
+        color: #FD2155;
+        font-size: 30px;
+        float: left;
+     }
+  /*   .myspan > span:not(.myspan > span:first-child){
+         
+        animation-name: jiggle;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count:1 ;
+        animation-play-state: paused;
+        animation-duration: 1s;
+     }
+     @-webkit-keyframes jiggle {
+        0%{
+            transform: scale(1,1);
+        }
+        25%{
+            transform:scale(1.5,0.5) ;
+        }
+        50%{
+            transform: scale(0.5,1.5);
+        }
+        75%{
+            transform: scale(0.75,0.25);
+        }
+        100%{
+            transform: scale(1,1);
+        }
+    }
+    </style> */
+</head>
+<body>
+    <img class="myimg" src="codinglogo.png" alt="">
+    <span class="myspan"><span>V</span>
+    <span>a</span>
+    <span>s</span>
+    <span>u</span>
+    <span>n</span>
+    <span>d</span>
+    <span>h</span>
+    <span>r</span>
+    <span>a</span>
+    <body>
+    <form class="myform" onsubmit=" return mySubmit()">
+        <table border="1" cellpadding="2" cellspacing="10">
+       <tr>
+               <td>
+                <input type="text" name="FirstName" placeholder="FirstName">
+                <span class="err err_fname"></span>
+                </td>
+               <td>
+                <input type="Email" id="Email" name="Enter your Email" placeholder="Email"><br>
+                <span class="err err_email"></span>
+               </td>
+         </tr>
+         <tr>
+               <td>
+                <input type="text" name="subject" placeholder="subject">
+                <span class="err" id="errsubject"></span>
+                  
+                </td> 
+         
+                <td>
+                <textarea name="write your feedback" id="" cols="30" rows="10" ></textarea>
+                <span class="err err_msg"></span>
+                </td>     <br>
+       </tr>
+        <tr>
+           <td>
+            <input data-myattr="fb" type="submit" name="send feedback" value="send feedback">
+            </td>
+         </tr>
+    </table>
+    </form>
+    </body>
+    <pre style="color:black;">
+        asd
+        asd
+        asd
+        asd
+        asd
+        asd
+        asd
+        asd
+        asd
+        asd
+        asd
+        asd
+        asd
+        asd
+        asd
+        asd
+        asd
+        asd
+        asd
+        asd
+        asd
+        asd
+        asd
+        asd
+        asd
+        asd
+        asd
+        
+        </pre>
+    <script>
+        /*Span is a inline element into span padding-top and margin-top 
+         tyles will not work or eske liy span tag ko block lavel element bnana pdta h*/
+        function mySubmit(){
+             /*Access the dom element*/
+            var n = document.querySelector('input[name="FirstName"]').value;
+            var E =document.getElementById('Email').value
+            var su = document.querySelector('[data-myattr="fb"]').value;
+            var m = document.querySelector('form textarea').value;
+           
+            /**we are creating a global variable*/
+
+            var isValid = true;
+            if(n == ''){
+             document.querySelector(' .err_fname').innerHTML = 'please Enter your name';
+             isValid = false;/*isvalis nhi h toh data submit nhi hogA MTLB ISVALID FALSESUBMIT MT KRO*/
+            }
+           if(E == ''){
+            
+            document.querySelector('.err_email').innerHTML = 'please Enter your Email';
+            isValid = false;    
+            }
+            if(su == ''){
+              document.querySelector('#errsubject').innerHTML = 'enter your subject';
+              isValid = false;/*why it is not showing errore*/
+            }
+              if(m == ''){
+                document.querySelector('.err_msg').innerHTML = 'wrte your feedback';
+                isValid = false;
+              }
+              if(isValid == true){
+                return true;/*agr sara data fill hoga toh quary stig  upr sear me dikh jaegi ki ye data submit hua h*/
+              }else{
+                return false;
+              }
+            }
+            /*teasting*/
+          /* alert(n);
+           alert(E);
+           alert(su); 
+           alert(m);  */
+     </script>
+</body>
+</html>

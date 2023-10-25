@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>traversing dwon</title>
+</head>
+<body>
+    <div class="gp" id="grandparent" >
+        grand parents
+        <div class="p">
+            parents
+            <div class="c">
+                childs
+                <div class="gc gc1">
+                      grand child1
+                </div>
+                <div class="gc gc2">
+                      grand child2
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <script>
+        p = document.getElementById('grandparent');
+         console.log(p);
+
+         arr = p.querySelectorAll('.gc');
+
+         console.log(arr);
+         arr.forEach(function(currentElement,index,arr){
+            currentElement.style.color = 'Orange';   
+            console.log(currentElement);
+               
+            });
+       // p.querySelector('div.gc.gc1').style.color = 'red';
+
+        //agr dono komek sath return krana ho tb queryselecter all use krte h
+        //jisme for each loop chlwana pdta h kyuki wo array return krta h
+
+        var p;
+        var arr; 
+    </script>
+</body>
+</html>

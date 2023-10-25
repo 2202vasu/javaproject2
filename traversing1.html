@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //lets creat a unorderd list
+        u = document.createElement('ul');
+        console.log(u);
+        //bhut sari list bnani h toh for loop ke thru bnaenge
+         for(var i=0; i <=10; i++){
+              var li = document.createElement('li');
+              li.setAttribute('class','a_li');
+
+              li.classList.add('common');
+              //li.innerhtml = 'hello';
+              var tn = document.createTextNode('HELLO ' +i);
+               li.appendChild(tn);
+               u.appendChild(li);
+               console.log(li);
+
+
+         }
+         document.body.appendChild(u);
+         var u;
+
+         var obj = document.getElementsByClassName('common');
+         console.log(obj);
+         console.log(typeof obj);
+
+          for(var p in obj){
+
+              console.log(p);
+              console.log(!isNaN(p));
+              if(!isNaN(p) && (p <=3) || (p >= 5)){
+             // console.log(obj[p]);
+              obj[p].style.color ='red';
+              }
+          } 
+          var ol = {
+            /*
+            1. p:v
+            */
+           "name":"Anil",
+           "surname":"yadav",
+           mission:"to education students",
+           getFullName:function(){
+                return this.name +" "+ this.surname
+                 
+           },
+           getMission:function(){
+              return this.mission;
+           }
+        };
+        //how to access the properties of js object
+        //boject.propertyname
+        console.log(ol.name);
+
+        //object['propertyname']
+        console.log(ol["surname"]);
+
+        let m='mission';
+        //object[expression]
+        console.log(ol[m]);
+        console.log(ol.getFullName());
+        console.log(ol.getMission());  
+   
+   </script>
+</body>
+</html>

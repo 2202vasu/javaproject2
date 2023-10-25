@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pelindrom num.</title>
+</head>
+<body>
+    <script>
+        function checkForPalindrom(number){//formal argument ka nam kuch bhi rkh diya diffrent bnane ko
+        //user se input le kr usko parsint se number me change krke ynha supply kr diya
+        alert(number.length);//number ki length tb dega jb datatype apne string me hoga nhi toh undifined deta h
+         alert(number.charAt(1));
+
+        var isPalindrom = false;   
+
+         for(j=(number.length-1); j>=0; j--){
+            console.log(number.charAt(j));
+             //2332
+
+
+            for(var i=0; i<number.length; i++){
+               console.log(number.charAt(i));
+                //2332
+
+               if(number.charAt(j) == number.charAt(i)){
+                 isPalindrom = true;
+               }else{
+                isPalindrom = false;
+               }
+               
+               if(isPalindrom == true){
+                alert(number + '   its palindrome num');
+               }else{
+                alert(number +'   its not a palindrom num' );
+               }
+            }
+
+    }
+}
+        let num = prompt('please inter a number only');
+       //  alert('esme ad arega as string'+num+20);
+       //ese me ye sirf num ki real value datatype number me return krega or agr kuch concanate krenge toh use as string consider krke add krta h pr hum ab string datatype ko num me change krne pr add kr dega 
+      //   alert(num+20+" esme as string add krega");
+       //num = parseInt(num);
+        // alert(num +30+" esme ad krega as number jod dega");
+     
+
+         checkForPalindrom(num);//ckeckfor palindrom function ko call kiya or (num ye jo num let h use esi me pass kr diya)
+                // num=>number
+    </script>
+</body>
+</html>

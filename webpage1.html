@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>webpage1</title>
+</head>
+<body id="a_body">
+    <script>
+        var h = document.createElement('header');
+        h.innerHTML = 'Header';
+        console.log(h);
+
+       document.getElementById('a_body').appendChild(h);
+//body ke andr es h var ko append krenge jisme header h
+       document.querySelector('header').setAttribute('class','a_header');
+
+       document.body.style.margin = '30px 30px';
+
+     var c1 =  document.getElementsByClassName('a_header');
+      // console.log(c1[0]);
+            c1[0].style.width = '100%';
+            c1[0].style.height ='100px';
+            //c1[0].style.backgroundColor = 'red';
+            c1[0].style.border = '3px solid #333';
+
+      var innerspelling =   document.getElementsByTagName('header');
+        //console.log(innerspelling[0]); hum es element ko get kr le rhe h mtlb ab style bhi kr lenge
+         innerspelling[0].style.color = 'green';
+         innerspelling[0].style.fontSize = '30px';
+         innerspelling[0].style.textAlign = 'center';
+         innerspelling[0].style.lineHeight = '100px';
+
+
+     //now we are going to build footer
+     
+    let f = document.createElement('footer');
+     f.innerHTML = "footer";
+    let n = document.createElement('nav');
+       console.log(n);
+      console.log(f);
+
+      document.body.appendChild(n); 
+    
+      var aside1 = document.createElement('aside');
+      aside1.innerHTML = "aside1";
+      var section = document.createElement('section');
+      section.innerHTML = 'section';
+      var aside2 = document.createElement('aside');
+      aside2.innerHTML = 'aside2';
+      
+      document.body.appendChild(aside1);
+      document.body.appendChild(section);
+      document.body.appendChild(aside2);
+
+
+    // document.querySelectorAll('aside').style.display = 'inline-block';
+     //document.querySelector('section').style.display = 'inline-block';
+     var arr = document.querySelectorAll('aside');
+     console.log(arr);
+
+     document.querySelector('section').style.display = 'inline-block';
+      //AFTER APPENDING IN body we will get it in body
+
+     document.body.appendChild(f);
+
+     var fc1 = document.querySelectorAll('footer');
+     //console.log(fc1[0]);
+     fc1[0].setAttribute('data-foot','foot1');
+
+     document.querySelector('footer[data-foot="foot1"]').style.textAlign = 'center';
+     document.querySelector('[data-foot="foot1"]').style.color = 'green';
+     document.querySelector('[data-foot]').style.lineHeight = '100px';
+
+     document.querySelector('footer[data-foot="foot1"]').style.fontSize = '35px';
+     //NOW WE ARE GOING TO STYLE FOOTER BODER
+    /* document.body.footer.style.width = '100%';
+     document.body.footer.style.height = '100px';
+     document.body.footer.style.border = '5px solid #333';  */
+     //it is not working so we will make on more var and we will get that var
+
+     var fc2 = document.querySelector('footer');
+
+       fc2.style.width = '100%';
+       fc2.style.height = '150px';
+       fc2.style.border = '5px solid #333';
+      
+
+
+    </script>
+</body>
+</html>

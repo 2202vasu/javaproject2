@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>traversing/search up/down</title>
+</head>
+<body>
+    <div class="gp">
+        grand parent
+        <div class="p">
+            parent
+            <div class="c">
+                child
+                <div class="gc">
+                    grand child
+                </div>
+              
+            </div>
+        </div>
+    </div>
+    <script>
+        gc = document.querySelector('div.gc');
+        console.log(gc);
+        gc.closest('div.gp').style.border = '1px solid red';
+       // console.log(x);
+        gc.closest('.p').style.border ='2px solid blue '
+        gc.closest('.c').style.color = 'orange';
+        gc.closest('.gc').style.border = '2px solid cyan';
+        var gc;
+    </script>
+</body>
+</html>

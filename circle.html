@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area Of Circle </title>
+</head>
+<body>
+    <form action=" ">
+        <input type="text" data-p="pai" name="pai" placeholder="value of pai">
+    <input type="text"  data-r1="rad1" name="r1" placeholder="radius1">
+    <input type="text"  data-r2="rad2" name="r2" placeholder="radius2">
+    <input  type="submit" value="result" onclick="calculation()">
+    </form>
+
+
+    
+   <script>
+        function calculation(){//parsFlot(document.query([''])likhne pr undifined de rha tha)
+                let p = document.querySelector('[data-p="pai"]').value;
+                alert("value of pai: " + p);
+                let r1 = document.querySelector('[data-r1="rad1"]').value;
+                alert("radius1: " + r1);
+                let r2 = document.querySelector('[data-r2="rad2"]').value;
+                 alert("radius2: " + r2);
+                // alert("r1: " + r1).value;
+                // alert("r2: "+ r2).value;
+            //alert nhi aa rha
+            //undifine our nun vLUE AAA RHI H VALUE DENE KE BAD BHI
+                let result = (p * r1 *r2);
+                alert("Area of circle: " + result);
+        }
+       // calculation(result);
+   </script> 
+</body>
+</html>

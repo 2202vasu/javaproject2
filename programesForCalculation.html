@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calulation on formula</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" data-base="b1" name="base" placeholder="Value Of Base">
+        <input type="text" data-height="h1" name="height" placeholder="Value Of height">
+        <input type="submit" id="done" value="calculate" onclick="calculation()">
+    </form>
+</body>
+  <script>
+       function calculation(){
+          let base = document.querySelector('[data-base="b1"]').value;
+          let height = document.querySelector('[data-height="h1"]').value;
+          
+          alert("Base: "+base);
+          alert("height: "+height);
+
+          let base_mult_height = (base * height);
+          alert("multiplication  Of Base*Height "+base_mult_height );
+
+           //noe we will get area of tringle by dividing 2
+
+          let result = (base * height/2);
+          alert("Area Of Tringle by diving 2"+result);
+          //data saving in local pc 
+          localStorage.setItem("AREA OF TRINGLE",result);
+       }
+  </script>
+</html>

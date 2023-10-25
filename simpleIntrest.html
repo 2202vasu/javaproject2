@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>simple Intrest</title>
+    <style>
+        input{
+            background-color: chartreuse;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <input type="text" data-p="P" name="princple" Placeholder="amount of Princple"><br><br>
+        <input type="text" data-R="R" name="rate" placeholder="Rate of Amount"><br><br>
+        <input type="text"  data-T="T" name="time" placeholder="Duration"><br><br>
+        <input type="submit" value="RESULT" onclick="simpleIntrest()">
+    </form>
+    <script>
+        function simpleIntrest(){
+            let Princple = document.querySelector('[data-p="P"]').value;
+            let Rate = document.querySelector('[data-R="R"]').value;
+            let time = document.querySelector('[data-T="T"]').value;
+            alert("princple: " + Princple);
+            alert("Rate: " + Rate);
+            alert("Time: " + time);
+
+            
+            let  result = (Princple * Rate * time/100);
+            //now directly we will get result
+            alert("simle Intrest : " + result);
+            localStorage.setItem("simple Intres",result); 
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>head</title>
+</head>
+<body>
+    <script>
+        //lets creat a i tag by using js
+        //2 variable ko intialised ynha kr diya
+        i = document.createElement('i');
+        i.setAttribute('class','fas');
+        i.classList.add('fa-home');
+        console.log(i);
+
+        document.body.appendChild(i);
+        //lets creat a script tag
+       let l = document.createElement(link);
+       l.setAttribute('rel','stylesheet');
+       ///ye incumplite h smjh nhi aaya head me link nhi append hui h
+       console.log(l);
+       document.head.appendChild(l);
+       // document.head.appendChild(i);
+        //1 variable decleration ynha kr diya
+         var i;
+    </script>
+</body>
+</html>

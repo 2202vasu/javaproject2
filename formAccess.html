@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form access by js</title>
+</head>
+<body>
+    <form onsubmit="submitForm()">
+        <input id="n1" type="text" name="num1" placeholder="Enter the value"> 
+        <input data-n2="n2" type="text" name="num2" placeholder="Enter the value">
+        <input data-n2="n3" type="text" name="num3" placeholder="Enter the value3">
+        <input type="submit" value="Submit">
+    </form>
+ <br>
+ <br>
+ <br>
+ <br>
+    <form onsubmit="submitForm()">     
+        <input  type="text" placeholder="Enter the value of secound form">
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        //onsubmit event sirf form pr he lgega
+           function submitForm(){//formal paramter/arguments
+                 //function body
+                 //
+                let number1 = document.getElementById('n1').value;
+                var number2 = document.querySelector('[data-n2="n2"]').value;
+                                                    //('[attributes="value"]')   
+                alert('ok  '+ number1);
+                alert('ok2 '+ number2);   
+
+
+                let result = (parseInt(number1) +parseInt( number2));
+                   alert(result);  
+                   
+                   /*now save this result in local storage so
+                    that we can access later and its parrt of html 
+                    web storage it is not part of js*/
+                 // object.method();
+                 localStorage.setItem('result',result);//we are passinh 2 actual argument here 
+                                             //this result is variable we have to written it without string       
+              }
+            
+    </script>
+</body>
+</html>
